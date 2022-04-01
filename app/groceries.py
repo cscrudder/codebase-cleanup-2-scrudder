@@ -44,6 +44,7 @@ for p in products:
 
 
 # function to calc average price
+# I'm okay leaving it here and not putting this in utils since it's only referenced in this module
 def calculate_average_price(products):
     # determines if products is DF, if so, makes it list of dicts
     if type(products) == pd.DataFrame:
@@ -54,13 +55,17 @@ def calculate_average_price(products):
         all_prices.append(float(p["price"]))
     # I'm not sure if this is the appropriate place to import but wasn't sure where else they'd go
     from statistics import mean
-    from app.utils import to_usd
     avg_price = mean(all_prices)
-    print("---------")
-    print("AVERAGE PRICE:", to_usd(avg_price))
-    print("---------")
+    return avg_price
 
-calculate_average_price(products)
+
+avg_price = to_usd(calculate_average_price(products))
+
+print("---------")
+print("AVERAGE PRICE:", avg_price)
+print("---------")
+
+
 
 
 
