@@ -1,19 +1,23 @@
 
+from app.utils import to_usd
+
 # READ INVENTORY OF PRODUCTS
-
-#products_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
-#products_df = read_csv(products_filepath)
-#products = products_df.to_dict("records")
-
 import os
 
+# base filepath to where the codebase cleanup file is, then go to data file within:
+base_filepath = os.path.join(os.path.dirname(__file__), "..", "data")
+
+# modifies the base filepath for the custom and default files:
+products_filepath = os.path.join(base_filepath, "products.csv")
+default_filepath = os.path.join(base_filepath, "default_products.csv")
+
 # checks to see if a products.csv file exists. If not, it uses the default
-if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
+if products_filepath == True:
     print("USING CUSTOM PRODUCTS CSV FILE...")
-    csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+    csv_filepath = products_filepath
 else:
     print("USING DEFAULT PRODUCTS CSV FILE...")
-    csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv")
+    csv_filepath = default_filepath
 
 
 
@@ -32,19 +36,17 @@ print("---------")
 print("THERE ARE", len(products), "PRODUCTS:")
 print("---------")
 
-for p in products:
-    print("..." + p["name"] + "   " + '${:,.2f}'.format(p["price"]))
-
-
 all_prices = []
 for p in products:
+    print("..." + p["name"] + "   " + to_usd(p["price"]))
     all_prices.append(float(p["price"]))
+
 
 import statistics
 avg_price = statistics.median(all_prices)
 
 print("---------")
-print("AVERAGE PRICE:", '${:,.2f}'.format(avg_price))
+print("AVERAGE PRICE:", to_usd(avg_price))
 
 
 

@@ -7,10 +7,10 @@
 #python-dotenv
 
 # web requests / fetching data:
-#requests
+requests
 
 # data processing:
-#pandas
+pandas
 
 # email:
 #sendgrid==6.6.0 # this version may be older than current docs
@@ -20,5 +20,5 @@
 #kaleido # for chart exports
 
 # quality control / code mgmt:
-#pytest
+pytest
 #autopep8
