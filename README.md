@@ -51,6 +51,7 @@ python app.crypto
 Run the stock data fetcher:
 ```sh
 python app.stock
+```
 
 Run the unemployment data fetcher:
 ```sh
