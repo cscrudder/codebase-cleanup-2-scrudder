@@ -50,7 +50,7 @@ python -m app.crypto
 
 Run the stock data fetcher:
 ```sh
-python -m app.stock
+python -m app.stocks
 ```
 
 Run the unemployment data fetcher:
