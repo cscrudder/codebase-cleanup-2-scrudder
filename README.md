@@ -40,26 +40,26 @@ A default product list will be used if you do not complete this step.
 
 Run the game:
 ```sh
-python app/game.py
+python app/game
 ```
 
 Run the crypto data fetcher:
 ```sh
-python app.crypto.py
+python app.crypto
 ```
 
 Run the stock data fetcher:
 ```sh
-python app.stock.py
+python app.stock
 
 Run the unemployment data fetcher:
 ```sh
-python app.unemployment.py
+python app.unemployment
 ```
 
 Run the groceries app:
 ```sh
-python app.groceries.py
+python app.groceries
 ```
 
 
