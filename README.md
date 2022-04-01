@@ -45,22 +45,22 @@ python app/game.py
 
 Run the crypto data fetcher:
 ```sh
-python app.crypto
+python -m app.crypto
 ```
 
 Run the stock data fetcher:
 ```sh
-python app.stock
+python -m app.stock
 ```
 
 Run the unemployment data fetcher:
 ```sh
-python app.unemployment
+python -m app.unemployment
 ```
 
 Run the groceries app:
 ```sh
-python app.groceries
+python -m app.groceries
 ```
 
 
