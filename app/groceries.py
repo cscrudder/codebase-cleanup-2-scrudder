@@ -1,4 +1,6 @@
 
+from typing import Dict
+from numpy import product
 from app.utils import to_usd
 
 # READ INVENTORY OF PRODUCTS
@@ -25,6 +27,7 @@ from pandas import read_csv
 
 #reads the csv file into products variable
 products = read_csv(csv_filepath)
+
 #pandas transforms the data into a list of dictionaries
 products = products.to_dict('records')
 
@@ -41,12 +44,19 @@ for p in products:
     print("..." + p["name"] + "   " + to_usd(p["price"]))
     all_prices.append(float(p["price"]))
 
+def calculate_average_price(products):
 
-import statistics
-avg_price = statistics.median(all_prices)
+    all_prices = []
+    for p in products:
+        all_prices.append(float(p["price"]))
+    from statistics import mean
+    from app.utils import to_usd
+    avg_price = mean(all_prices)
+    print("---------")
+    print("AVERAGE PRICE:", to_usd(avg_price))
+    print("---------")
 
-print("---------")
-print("AVERAGE PRICE:", to_usd(avg_price))
+calculate_average_price(products)
 
 
 
