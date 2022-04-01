@@ -40,7 +40,7 @@ A default product list will be used if you do not complete this step.
 
 Run the game:
 ```sh
-python app/game
+python app/game.py
 ```
 
 Run the crypto data fetcher:
