@@ -77,3 +77,6 @@ Alternatively, you can simply run:
 pytest
 ```
 which would run tests with the warnings.
+
+## Optional Challenges
+I completed the optional challenge for the Groceries app but not the financial ones.
